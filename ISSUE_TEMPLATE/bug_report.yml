@@ -1,0 +1,29 @@
+name: Bug — something errors or behaves wrongly
+description: A crash, a wrong behaviour, or a failing test.
+labels: ["bug"]
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: Repo
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Command and full output
+      description: Paste the whole traceback, not the last line.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: gate
+    attributes:
+      label: Is the gate green on main?
+      description: "Output of: uv run python scripts/check.py"
+      render: text
+  - type: input
+    id: env
+    attributes:
+      label: OS and uv version
+      placeholder: Windows 11, uv 0.5.x

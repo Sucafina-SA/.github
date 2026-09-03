@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: The repo standard
+    url: https://github.com/Sucafina-SA/research-standards
+    about: How these repos are structured, and why. Read before filing a structural issue.

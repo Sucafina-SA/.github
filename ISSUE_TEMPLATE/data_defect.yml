@@ -1,0 +1,43 @@
+name: Data defect — a number is wrong
+description: A published value disagrees with the source, a legacy system, or itself.
+labels: ["data-defect"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Numbers, not adjectives. A defect report with the actual values and the
+        query that produced them can be reproduced; one without cannot.
+  - type: input
+    id: repo
+    attributes:
+      label: Repo and table
+      placeholder: dumbo / dumbo_long
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected vs observed
+      description: State both, with the delta, and say where "expected" comes from.
+      placeholder: |
+        expected  4,348 rows across 2,174 sessions (KC baseline, docs/.../A1_result.md)
+        observed  4,201 rows across 2,174 sessions
+        delta     -147 rows, all in 2019
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: The exact command or query
+    validations:
+      required: true
+  - type: textarea
+    id: ruled_out
+    attributes:
+      label: What you have already ruled out
+      description: Saves the next person re-running your dead ends.
+  - type: input
+    id: scope
+    attributes:
+      label: Blast radius
+      description: Which downstream repos or models read this?
